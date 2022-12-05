@@ -1,3 +1,5 @@
+'use strict'
+
 console.log('Starting up');
 
 var gProjs = [
@@ -29,6 +31,7 @@ var gProjs = [
 ]
 
 function getProjs() {
+    console.log('gProjs', gProjs)
     return gProjs
 }
 
