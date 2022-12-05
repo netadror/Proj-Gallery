@@ -47,12 +47,22 @@ function renderModal(projId) {
     
     <h2>${proj.name}</h2>
 <p class="item-intro text-muted">${proj.desc}</p>
-<img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.id}.jpg" alt="">
+<img class="img-fluid rounded d-block mx-auto" src="img/portfolio/${proj.id}.jpg" alt="">
 <ul class="list-inline">
-  <li>Date: ${proj.publishedAt}</li>
-  <li>Category: Games</li>
+  <li>Date published: ${proj.publishedAt}</li>
+  <li>Project Category: Games</li>
 </ul>
+<button onclick="onSeeMore(${proj.url})" class="btn btn-dark">Check it Out</button>
   `
     $('.modal-body').html(strHtmls)
     addProjEventListener()
 }
+function onSeeMore(projUrl) {
+    openLink(projUrl)
+
+}
+function openLink(projId) {
+    window.location.href = projUrl
+}
+/* <a href="https://github.com/netadror" target="_blank"> */
+{/* <button onclick="" class="btn btn-dark">Check it Out</button> */ }

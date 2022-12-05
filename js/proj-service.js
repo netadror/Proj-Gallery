@@ -6,27 +6,43 @@ var gProjs = [
     {
         id: "inpicturegame",
         name: "In picture game",
-        desc: "A simple js game",
+        desc: "A simple memory game",
         url: "https://netadror.github.io/inPictureGame/",
         publishedAt: getDate(2022, 11, 3),
-        labels: ["games"]
+        labels: ["games, Memory game"]
     },
     {
-        id: "inpicturegame",
-        name: "In picture game",
-        desc: "A simple js game",
-        url: "https://netadror.github.io/inPictureGame/",
+        id: "minessweeper",
+        name: "Minessweeper",
+        desc: "A simple JS version of the famous 80s game",
+        url: "https://netadror.github.io/mine-sweeper/",
         publishedAt: getDate(2022, 12, 5),
-        labels: ["games"]
+        labels: ["games, Dark Mode"]
     },
     {
-        id: "inpicturegame",
-        name: "In picture game",
-        desc: "A simple js game",
-        url: "https://netadror.github.io/inPictureGame/",
+        id: "pacman",
+        name: "Pacman",
+        desc: "A light version of the famous game built with JS",
+        url: "https://netadror.github.io/pacman/",
         publishedAt: getDate(2022, 11, 22),
         labels: ["games"]
     },
+    // {
+    //     id: "touchnums",
+    //     name: "Pacman",
+    //     desc: "A light version of the famous game built with JS",
+    //     url: "https://github.com/netadror/touchnums",
+    //     publishedAt: getDate(2022, 11, 22),
+    //     labels: ["games"]
+    // },
+    // {
+    //     id: "pacman",
+    //     name: "Pacman",
+    //     desc: "A light version of the famous game built with JS",
+    //     url: "https://netadror.github.io/pacman/",
+    //     publishedAt: getDate(2022, 11, 22),
+    //     labels: ["games"]
+    // },
 
 ]
 
