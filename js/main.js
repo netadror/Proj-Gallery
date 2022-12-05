@@ -1,4 +1,3 @@
-'use strict'
 console.log('Starting up');
 
 $(onInit)
@@ -39,6 +38,22 @@ function addProjEventListener() {
     })
 
 }
+function onSubmit() {
+    var $elEmail = $('.email').val
+    var $elSubject = $('.subject').val
+    var $elText = $('.textarea').val
+    console.log($elEmail, $elSubject, $elText)
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=neta@neta.l.dror@gmail.com&su=${$elSubject}&body=${$elText}&txt=${$elText}', '_blank');
+}
+
+function seeMoreEventListener() {
+    $('.see-more').on('click', function () {
+        const projId = $(this).data('proj-id')
+        // console.log('projId', projId)
+        open(projId)
+    })
+
+}
 function renderModal(projId) {
     var proj = getProjById(projId)
     // console.log('projId', projId)
@@ -52,17 +67,21 @@ function renderModal(projId) {
   <li>Date published: ${proj.publishedAt}</li>
   <li>Project Category: Games</li>
 </ul>
-<button onclick="onSeeMore(${proj.url})" class="btn btn-dark">Check it Out</button>
+<button data-proj-id="${proj.id} class="see-more btn btn-dark" onclick="onSeeMore()">See More</button>
+<button data-proj-id="${proj.id} class="see-more btn btn-dark">Check it Out</button>
   `
     $('.modal-body').html(strHtmls)
     addProjEventListener()
+    seeMoreEventListener()
 }
-function onSeeMore(projUrl) {
-    openLink(projUrl)
+
+function open(projId) {
+    console.log('hello', projId)
+    // openLink(projUrl)
 
 }
-function openLink(projId) {
-    window.location.href = projUrl
-}
+// function openLink(projId) {
+//     window.location.href = projUrl
+// }
 /* <a href="https://github.com/netadror" target="_blank"> */
 {/* <button onclick="" class="btn btn-dark">Check it Out</button> */ }
