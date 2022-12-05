@@ -11,8 +11,8 @@ function onInit() {
 function renderProjs() {
     var projs = getProjs()
     var strHtmls = projs.map(proj => `
-    <div class="col-md-4 col-sm-6 portfolio-item data-proj-id="${proj.id}">
-     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+    <div class="col-md-4 col-sm-6 portfolio-item">
+     <a data-proj-id="${proj.id}" class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
         <div class="portfolio-hover">
             <div class="portfolio-hover-content">
                 <i class="fa fa-plus fa-3x"></i>
@@ -32,9 +32,16 @@ function renderProjs() {
 }
 
 function addProjEventListener() {
-    $('.btn-remove').on('click', function () {
-        const projId = $(this)('.car-preview').data('carId')
-        onDeleteCar(carId)
+    $('.portfolio-link').on('click', function () {
+        const projId = $(this).data('proj-id')
+        // console.log('projId', projId)
+        renderModal(projId)
     })
+
+}
+function renderModal(projId) {
+    var proj = getProjById(projId)
+    console.log('projId', projId)
+    console.log('projId', proj)
 
 }

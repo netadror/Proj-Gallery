@@ -35,4 +35,8 @@ function getProjs() {
     return gProjs
 }
 
+function getProjById(projId) {
+    const proj = gProjs.find(proj => projId === proj.id)
+    return proj
+}
 
