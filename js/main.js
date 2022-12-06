@@ -68,7 +68,6 @@ function renderModal(projId) {
   <li>Project Category: Games</li>
 </ul>
 <button data-proj-id="${proj.id} class="see-more btn btn-dark" onclick="onSeeMore()">See More</button>
-<button data-proj-id="${proj.id} class="see-more btn btn-dark">Check it Out</button>
   `
     $('.modal-body').html(strHtmls)
     addProjEventListener()
