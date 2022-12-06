@@ -67,7 +67,7 @@ function renderModal(projId) {
   <li>Date published: ${proj.publishedAt}</li>
   <li>Project Category: Games</li>
 </ul>
-<button data-proj-id="${proj.id} class="see-more btn btn-dark" onclick="onSeeMore()">See More</button>
+<a href="${proj.url}">see project on gitHub</a>
   `
     $('.modal-body').html(strHtmls)
     addProjEventListener()
