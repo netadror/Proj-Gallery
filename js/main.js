@@ -4,6 +4,7 @@ $(onInit)
 
 function onInit() {
     initPage()
+    addContactEventListener()
     console.log('gProjs', gProjs)
 }
 
@@ -29,31 +30,28 @@ function initPage() {
     $('.projs-container').html(strHtmls)
     addProjEventListener()
 }
-
 function addProjEventListener() {
     $('.portfolio-link').on('click', function () {
         const projId = $(this).data('proj-id')
         // console.log('projId', projId)
         renderModal(projId)
     })
-
 }
-function onSubmit() {
-    var $elEmail = $('.email').val
-    var $elSubject = $('.subject').val
-    var $elText = $('.textarea').val
-    console.log($elEmail, $elSubject, $elText)
-    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=neta@neta.l.dror@gmail.com&su=${$elSubject}&body=${$elText}&txt=${$elText}', '_blank');
-}
+function addContactEventListener() {
+    $('.btn-contact-form').on('click', function (e) {
+        e.preventDefault()
+        var elEmail = $('#email').val()
+        var elSubject = $('#subject').val()
+        var elText = $('#textarea').val()
+        console.log(elEmail, elSubject, elText)
 
-function seeMoreEventListener() {
-    $('.see-more').on('click', function () {
-        const projId = $(this).data('proj-id')
-        // console.log('projId', projId)
-        open(projId)
+        sendContactMsg(elEmail, elSubject, elText)
+        $('#email').val('')
+        $('#subject').val('')
+        $('#textarea').val('')
     })
-
 }
+
 function renderModal(projId) {
     var proj = getProjById(projId)
     // console.log('projId', projId)
@@ -71,16 +69,12 @@ function renderModal(projId) {
   `
     $('.modal-body').html(strHtmls)
     addProjEventListener()
-    seeMoreEventListener()
 }
 
-function open(projId) {
-    console.log('hello', projId)
-    // openLink(projUrl)
+
+function sendContactMsg(elEmail, elSubject, elText) {
+    console.log(elEmail, elSubject, elText)
+    const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=neta.l.dror@gmail.com&su=${elSubject}&body=${elText}`
+    window.open(emailLink)
 
 }
-// function openLink(projId) {
-//     window.location.href = projUrl
-// }
-/* <a href="https://github.com/netadror" target="_blank"> */
-{/* <button onclick="" class="btn btn-dark">Check it Out</button> */ }

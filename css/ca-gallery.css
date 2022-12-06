@@ -152,17 +152,16 @@ body {
     color: white;
     border: 0;
     background-color: #2e9bc3;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
     text-transform: uppercase;
 }
 
 #mainNav .navbar-brand {
     color: #2e9bc3;
-    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#mainNav .navbar-brand.active,
-#mainNav .navbar-brand:active,
+/* #mainNav .navbar-brand.active, */
 #mainNav .navbar-brand:focus,
 #mainNav .navbar-brand:hover {
     color: #2e9bc3;
